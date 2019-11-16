@@ -12,6 +12,13 @@ public class Connection extends HttpServlet {
     public Connection() {
     }
 
+    /**
+     * Get parameter from HTML
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
@@ -33,7 +40,7 @@ public class Connection extends HttpServlet {
     }
 
     /**
-     * When add class to data base.
+     * add class to data base.
      * @param classNum class number
      * @param collegeName college name
      * @param geArea GE Area
@@ -47,9 +54,32 @@ public class Connection extends HttpServlet {
     }
 
     /**
-     * Called form HTML
-     * @param geArea
-     * @param sort
+     * add class to data base.
+     * @param classNum class number
+     * @param collegeName college name
+     * @param geArea GE Area
+     * @param className class name
+     * @param date date
+     * @param time time
+     * @param teacher teacher
+     */
+    public void add(String classNum, String collegeName, String geArea, String className, String date, String time, String teacher) {
+        // add
+        geAreaList.add(new Class(classNum, collegeName, geArea, className, date, time, teacher));
+    }
+
+    public void connectTester(String geArea, int sort) {
+        connect(geArea, sort);
+    }
+
+    public void connectTester(String geArea) {
+        connect(geArea, 0);
+    }
+
+    /**
+     * Called form HTML.
+     * @param geArea from HTML
+     * @param sort sorting option from HTML
      */
     private void connect(String geArea, int sort) {
         // search by area, no sorting

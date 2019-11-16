@@ -7,19 +7,37 @@ import java.util.List;
  */
 public class GEAreaList {
 
+    /**
+     * Constructor
+     */
     public GEAreaList() {
         geAreaList = new LinkedList<>();
         makeList();
     }
 
+    /**
+     * Add class to ge list
+     * @param aClass
+     */
     public void add(Class aClass) {
         geAreaList.get(aClass.getGeAreaIndex()).add(aClass);
     }
 
+    /**
+     * Find class with GE Area
+     * @param geArea GE
+     * @return all classes for a GE
+     */
     public String find(String geArea) {
         return geAreaList.get(getGeAreaIndex(geArea)).findAll();
     }
 
+    /**
+     * Find class with GE Area in a order.
+     * @param geArea
+     * @param comp way to compare.
+     * @return all classes for a GE in a order.
+     */
     public String findByComparator(String geArea, int comp){
         return geAreaList.get(getGeAreaIndex(geArea)).byComparator(comp);
     }

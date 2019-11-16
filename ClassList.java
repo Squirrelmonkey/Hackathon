@@ -13,10 +13,18 @@ public class ClassList {
         iterator = classes.iterator();
     }
 
+    /**
+     * Add class to class list.
+     * @param aClass
+     */
     public void add(Class aClass) {
         classes.add(aClass);
     }
 
+    /**
+     * Find all classes.
+     * @return all classes.
+     */
     public String findAll() {
         iterator = classes.iterator();
         String result = "";
@@ -28,6 +36,11 @@ public class ClassList {
         return result;
     }
 
+    /**
+     * Find with comparator.
+     * @param comparator
+     * @return Find all classes in a order.
+     */
     public String byComparator(int comparator) {
         if (comparator == 0)
             Collections.sort(classes, Class.comparatorBySchool());
@@ -39,6 +52,6 @@ public class ClassList {
         return findAll();
     }
 
-    Iterator iterator;
-    List<Class> classes;
+    private Iterator iterator;
+    private final List<Class> classes;
 }
