@@ -35,47 +35,74 @@
 
     <!-- 連結網頁主程式 -->
     <script src="./js/main.js"></script>
+
+
 </head>
 
 <body>
-    <div>
-        <title>something</title>
-    </div>
+    <form method="GET" action="loginServlet">
 
-    <!--Search bar-->
-    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-        <div class="input-group">
-            <input type="search" placeholder="Enter a class" aria-describedby="button-addon1"
-                class="form-control border-0 bg-light">
-            <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i
-                        class="fa fa-search"></i></button>
+
+        <!--Search bar-->
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" id="header" style="margin: 15px 15px 15px 15px;">
+            <div class="input-group">
+                <input type="text" id="myInput" placeholder="Enter a class" aria-describedby="button-addon1"
+                    class="form-control border-0 bg-light">
+                <div class="input-group-append">
+                    <button id="myInput" type="submit" class="btn btn-link text-primary"><i
+                            class="fa fa-search"></i></button>
+                </div>
             </div>
         </div>
-    </div>
-    <!--Search bar end-->
+        <!--Search bar end-->
 
-    <!-- input tag -->
-    <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals..">
+        <!-- <input type="text" id="myInput" onkeyup="search_table()" placeholder="Search for names.." title="Type in a name"> -->
+        <div style="margin: 15px 15px 15px 15px;">
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:60%; background-color: #d7d7d7;">Name</th>
+                    <th style="width:40%; background-color: #d7d7d7;">Country</th>
+                </tr>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Berglunds snabbkop</td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Koniglich Essen</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>North/South</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Paris specialites</td>
+                    <td>France</td>
+                </tr>
+            </table>
+        </div>
 
-    <!-- ordered list -->
-    <ol id='list'>
-        <li class="animals">Cat</li>
-        <li class="animals">Dog</li>
-        <li class="animals">Elephant</li>
-        <li class="animals">Fish</li>
-        <li class="animals">Gorilla</li>
-        <li class="animals">Monkey</li>
-        <li class="animals">Turtle</li>
-        <li class="animals">Whale</li>
-        <li class="animals">Aligator</li>
-        <li class="animals">Donkey</li>
-        <li class="animals">Horse</li>
-    </ol>
-    <!-- 設定置底返回按鈕 返回按鈕滾動動畫 -->
-    <button id="goBackBtn" href="#header" class="bg-primary">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+        <!-- 設定置底返回按鈕 返回按鈕滾動動畫 -->
+        <button id="goBackBtn" href="#header" class="bg-primary">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </form>
 </body>
 
 </html>
