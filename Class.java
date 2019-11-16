@@ -111,7 +111,7 @@ public class Class {
     }
 
     public String toString() {
-        return collegeName + "  " + classNum + "  " + geArea + " :  " + className + "  " + date + "  " + time + "  " + teacher + "\n"
+        return collegeName + "\t  " + classNum + "  " + geArea + " :  " + className + "  " + date + "  " + time + "  " + teacher + "\n"
                 + "\tDescription: " + description + " \n\tPreRequisite: " + preReq;
     }
 

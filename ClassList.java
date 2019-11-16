@@ -20,7 +20,7 @@ public class ClassList {
     public String findAll() {
         iterator = classes.iterator();
         String result = "";
-        System.out.println("Output : \n\n");
+        System.out.println("Output : \n");
 
         while (iterator.hasNext())
             result += iterator.next() + "\n";
@@ -35,6 +35,7 @@ public class ClassList {
             Collections.sort(classes, Class.comparatorByTeacher());
 
 
+        System.out.println("With sorting...");
         return findAll();
     }
 
