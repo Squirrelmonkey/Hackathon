@@ -16,16 +16,11 @@ public class Connection extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String classNum = request.getParameter("classNum");
-        String school = request.getParameter("school");
+
         String geArea = request.getParameter("geArea");
-        String className = request.getParameter("className");
-        String date = request.getParameter("date");
-        String time = request.getParameter("time");
         String sort = request.getParameter("sort");
 
-        connect(classNum, school, geArea, className, date, time, Integer.parseInt(sort));
-
+        connect(geArea, Integer.parseInt(sort));
 
         out.println("<html>");
         out.println("<body>");
@@ -37,9 +32,26 @@ public class Connection extends HttpServlet {
         out.println("</body></html>");
     }
 
-    private void connect(String classNum, String collegeName, String geArea, String className, String date, String time, int sort) {
+    /**
+     * When add class to data base.
+     * @param classNum class number
+     * @param collegeName college name
+     * @param geArea GE Area
+     * @param className class name
+     * @param date date
+     * @param time time
+     */
+    public void add(String classNum, String collegeName, String geArea, String className, String date, String time) {
         // add
         geAreaList.add(new Class(classNum, collegeName, geArea, className, date, time));
+    }
+
+    /**
+     * Called form HTML
+     * @param geArea
+     * @param sort
+     */
+    private void connect(String geArea, int sort) {
         // search by area, no sorting
         System.out.println(geAreaList.find(geArea));
 
