@@ -1,12 +1,108 @@
-  
+<!--  in terminal use 'node-sass -o css scss -w' to change source code -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="https://sdk.herewhite.com/white-web-sdk/2.0.0-beta.3.css">
-        <script src="https://sdk.herewhite.com/white-web-sdk/2.0.0-beta.3.js"></script>
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <div id="whiteboard" style="width: 100%; height: 100vh;"></div>
-    </body>
+<html lang="en">
+
+<head>
+    <!-- css檔案用link, js檔案用src -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hackthon Project</title>
+    <link rel="icon shortcut" href="./img/search-icon.png">
+    <!-- 連結Bootstrap.min.css -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- 客製化Bootstrap CSS -->
+    <!-- 使用font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- 使用style.css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- animate.min.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- 連結Bootstrap所需要的js -->
+    <!-- jquery.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- popper.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap.min.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- wow.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <!-- 連結網頁主程式 -->
+    <script src="./js/main.js"></script>
+
+
+</head>
+
+<body>
+    <form method="GET" action="loginServlet">
+
+
+        <!--Search bar-->
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4" id="header" style="margin: 15px 15px 15px 15px;">
+            <div class="input-group">
+                <input type="text" id="myInput" placeholder="Enter a class" aria-describedby="button-addon1"
+                    class="form-control border-0 bg-light">
+                <div class="input-group-append">
+                    <button id="myInput" type="submit" class="btn btn-link text-primary"><i
+                            class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <!--Search bar end-->
+
+        <!-- <input type="text" id="myInput" onkeyup="search_table()" placeholder="Search for names.." title="Type in a name"> -->
+        <div style="margin: 15px 15px 15px 15px;">
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:60%; background-color: #d7d7d7;">Name</th>
+                    <th style="width:40%; background-color: #d7d7d7;">Country</th>
+                </tr>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Berglunds snabbkop</td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Koniglich Essen</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>North/South</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Paris specialites</td>
+                    <td>France</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 設定置底返回按鈕 返回按鈕滾動動畫 -->
+        <button id="goBackBtn" href="#header" class="bg-primary">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </form>
+</body>
+
 </html>
